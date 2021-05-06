@@ -27,3 +27,21 @@ CREATE TABLE IF NOT EXISTS staging_envents
     userId  INTERGER
 );
 """)
+
+songplay_table_create = ("""
+    CREATE TABLE IF NOT EXISTS songplays
+    (
+        songplay_id INTEGER IDENTITY (1, 1) PRIMARY KEY,
+        start_time TIMESTAMP,
+        user_id INTEGER,
+        level VARCHAR,
+        song_id VARCHAR,
+        artist_id VARCHAR,
+        session_id INTEGER,
+        location VARCHAR,
+        user_agent VARCHAR
+    )
+    DISTSTYLE KEY
+    DISTKEY (start_time)
+    SORTKEY (S)
+""")
