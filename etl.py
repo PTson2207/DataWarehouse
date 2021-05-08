@@ -23,3 +23,6 @@ def main():
     insert_tables(conn, cur)
 
     conn.close()
+
+if __name__ == "__main__":
+    main()
